@@ -1,0 +1,232 @@
+/* Basic body styling */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    background-color: #444;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Container for main content and sidebar */
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    margin: 15px;
+}
+
+main {
+    flex: 3; /* Main content takes 3 parts of the space */
+    padding: 20px;
+    background-color: #fff;
+    margin-right: 15px; /* Space between main and aside */
+}
+
+aside {
+    flex: 1; /* Sidebar takes 1 part of the space */
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+aside h2 {
+    margin-top: 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 20px;
+}
+
+/* Responsive design considerations */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack main and aside on smaller screens */
+    }
+
+    main {
+        margin-right: 0;
+        margin-bottom: 15px; /* Space between main and aside when stacked */
+    }
+
+    nav ul li {
+        display: block; /* Stack nav links */
+        margin-bottom: 10px;
+    }
+}
+
+/* Basic styling for rendered Markdown */
+.rendered-markdown h1, .rendered-markdown h2, .rendered-markdown h3, .rendered-markdown h4, .rendered-markdown h5, .rendered-markdown h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.rendered-markdown h1 { font-size: 2em; }
+.rendered-markdown h2 { font-size: 1.75em; }
+.rendered-markdown h3 { font-size: 1.5em; }
+.rendered-markdown h4 { font-size: 1.25em; }
+.rendered-markdown h5 { font-size: 1em; }
+.rendered-markdown h6 { font-size: 0.85em; }
+
+
+.rendered-markdown p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.rendered-markdown ul, .rendered-markdown ol {
+    margin-left: 30px; /* Increased indent for better readability */
+    margin-bottom: 15px;
+    padding-left: 10px; /* Ensure padding for list items */
+}
+
+.rendered-markdown li {
+    margin-bottom: 5px; /* Spacing between list items */
+}
+
+.rendered-markdown pre {
+    background-color: #2d2d2d; /* Darker background for code blocks */
+    color: #f0f0f0; /* Light text color for contrast */
+    padding: 15px;
+    border-radius: 4px;
+    overflow-x: auto;
+    border: 1px solid #444; /* Subtle border */
+}
+
+/* Inline code */
+.rendered-markdown code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #e7e7e7; /* Light gray background for inline code */
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 0.95em;
+}
+
+/* Ensure code within pre doesn't get the inline styling */
+.rendered-markdown pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit; /* Inherit from pre for consistency */
+}
+
+.rendered-markdown blockquote {
+    border-left: 4px solid #ccc; /* Slightly lighter border */
+    padding-left: 20px; /* More padding */
+    color: #555;
+    margin-left: 0;
+    margin-bottom: 15px;
+    font-style: italic; /* Italicize blockquote text */
+}
+
+.rendered-markdown table {
+    width: auto; /* Let table size itself, or use 100% for full width */
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.rendered-markdown th, .rendered-markdown td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.rendered-markdown th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.rendered-markdown img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Avoid extra space below image */
+    margin: 10px 0; /* Add some margin around images */
+}
+
+/* Styling for the category list in the sidebar */
+#category-list {
+    background-color: #f9f9f9; /* Light background for the category section */
+    padding: 15px;
+    border-radius: 4px;
+}
+
+#category-list h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+#category-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#category-list li {
+    margin-bottom: 8px; /* Space between category items */
+}
+
+#category-list li a {
+    text-decoration: none;
+    color: #007bff; /* Bootstrap-like blue for links */
+    display: block; /* Make the whole area clickable */
+    padding: 5px 8px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#category-list li a:hover {
+    background-color: #e9ecef; /* Light hover effect */
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Styling for the active category */
+#category-list li.active-category a {
+    background-color: #007bff; /* Blue background for active category */
+    color: #fff; /* White text for active category */
+    font-weight: bold;
+}
+
+#category-list li.active-category a:hover {
+    background-color: #0069d9; /* Slightly darker blue on hover for active */
+    color: #fff;
+}

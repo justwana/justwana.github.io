@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let uniqueCategories = [];
     let currentFilter = null; // To keep track of the active category filter
 
-    const postPaths = ['posts/post1.md', 'posts/post2.md'];
+    const postPaths = ['posts/post1.md', 'posts/post2.md', 'posts/project-documentation.md'];
 
     async function fetchAndDisplayPosts() {
         if (postPaths.length === 0) {
